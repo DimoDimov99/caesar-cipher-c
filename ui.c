@@ -26,6 +26,18 @@ int get_key()
     return INVALID_INPUT;
 }
 
+int get_message(char message[], int size)
+{
+    printf("Enter message:\n");
+
+    if (fgets(message, size, stdin) == NULL)
+    {
+        return INVALID_INPUT;
+    }
+
+    return 0;
+}
+
 int user_choice()
 {
     char choice[9];

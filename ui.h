@@ -7,5 +7,6 @@
 
 int get_key();
 int user_choice();
+int get_message(char message[], int size);
 
 #endif // CAESAR_CIPHER_UI_INCLUDE_GUARD

@@ -4,18 +4,30 @@
 #define SUCCESS 0
 #define FAILURE -1
 
+#define MESSAGE_SIZE 100
+
 int main()
 {
-    switch (user_choice())
+    char message[MESSAGE_SIZE];
+    int action = user_choice();
+    int key = get_key();
+    int message_result = get_message(message, MESSAGE_SIZE);
+
+    if (action         == INVALID_INPUT ||
+        key            == INVALID_INPUT ||
+        message_result == INVALID_INPUT   )
     {
-        case ENCRYPT_CHOSEN:
-            return encrypt_message();
-
-        case DECRYPT_CHOSEN:
-            return decrypt_message();
-
-        case INVALID_INPUT:
-        default:
-            return FAILURE;
+        return FAILURE;
     }
+
+    if (action == ENCRYPT_CHOSEN)
+    {
+        encrypt_message(message, key);
+    }
+    else if (action == DECRYPT_CHOSEN)
+    {
+        decrypt_message(message, key);
+    }
+
+    return SUCCESS;
 }

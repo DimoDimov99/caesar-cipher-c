@@ -1,19 +1,7 @@
 #include <stdio.h>
 
-#include "ui.h" // TODO: Get this out of here!
-
-int encrypt_message()
+void encrypt_message(char message[], int key)
 {
-    char message[100];
-
-    int key = get_key();
-    if (key == -1)
-    {
-        return -1;
-    }
-
-    printf("Enter message:\n");
-    fgets(message, sizeof(message), stdin);
     for (int i = 0; message[i] != '\n'; i++)
     {
         if (message[i] >= 'A' && message[i] <= 'Z')
@@ -32,23 +20,12 @@ int encrypt_message()
         }
     }
 
+    // TODO: Move to UI and remove stdio include
     printf("Encrypted message is: %s\n", message);
-    return 0;
 }
 
-int decrypt_message()
+void decrypt_message(char message[], int key)
 {
-    char message[100];
-
-    int key = get_key();
-
-    if (key == -1)
-    {
-        return -1;
-    }
-
-    printf("Enter message:\n");
-    fgets(message, sizeof(message), stdin);
     for (int i = 0; message[i] != '\n'; i++)
     {
         if (message[i] >= 'A' && message[i] <= 'Z')
@@ -69,6 +46,5 @@ int decrypt_message()
     }
 
     printf("Decrypted message is: %s\n", message);
-    return 0;
 }
 
