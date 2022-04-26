@@ -1,20 +1,21 @@
 #include "ui.h"
 #include "cipher.h"
 
+#define SUCCESS 0
+#define FAILURE -1
+
 int main()
 {
     switch (user_choice())
     {
         case ENCRYPT_CHOSEN:
-            encrypt_message();
-            break;
+            return encrypt_message();
 
         case DECRYPT_CHOSEN:
-            decrypt_message();
-            break;
+            return decrypt_message();
 
         case INVALID_INPUT:
         default:
-            break;
+            return FAILURE;
     }
 }
