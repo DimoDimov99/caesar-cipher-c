@@ -2,10 +2,10 @@
 
 #include "ui.h" // TODO: Get this out of here!
 
-char message[100];
-
 int encrypt_message()
 {
+    char message[100];
+
     int key = get_key();
     if (key == -1)
     {
@@ -21,7 +21,6 @@ int encrypt_message()
             message[i] = ((message[i] - 'A' + key ) % 26) + 'A';
         }
     
-
         else if (message[i] >= 'a' && message[i] <= 'z')
         {
             message[i] = ((message[i] - 'a' + key ) % 26) + 'a';
@@ -39,6 +38,8 @@ int encrypt_message()
 
 int decrypt_message()
 {
+    char message[100];
+
     int key = get_key();
 
     if (key == -1)
@@ -55,13 +56,11 @@ int decrypt_message()
             message[i] = (((message[i] - 'A' + (26 - key)) % 26) + 'A');
         }
     
-
         else if (message[i] >= 'a' && message[i] <= 'z')
         {
             message[i] = (((message[i] - 'a' + (26 - key)) % 26) + 'a');
 
         }
-
 
         else
         {

@@ -4,8 +4,6 @@
 
 #include "cipher.h"
 
-char choice[9];
-
 int get_key()
 {
     int number;
@@ -28,6 +26,8 @@ int get_key()
 
 int user_choice()
 {
+    char choice[9];
+
     printf("Type 'encrypt' to encrypt a message or type 'decrypt' to decrypt a message\n");
     fgets(choice, sizeof(choice), stdin);
 
