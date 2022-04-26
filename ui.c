@@ -1,3 +1,5 @@
+#include "ui.h"
+
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -21,7 +23,7 @@ int get_key()
     }
 
     printf("Invalid input\n");
-    return -1;
+    return INVALID_INPUT;
 }
 
 int user_choice()
@@ -37,22 +39,22 @@ int user_choice()
         choice[i] = tolower(choice[i]);
     }
 
-    int decrypt_choice = strcmp(choice, "decrypt\n");
     int encrypt_choice = strcmp(choice, "encrypt\n");
+    int decrypt_choice = strcmp(choice, "decrypt\n");
 
-    if (decrypt_choice == 0)
+    if (encrypt_choice == 0)
     {
-        return decrypt_message();
+        return ENCRYPT_CHOSEN;
     }
 
-    else if (encrypt_choice == 0)
+    else if (decrypt_choice == 0)
     {
-        return encrypt_message();
+        return DECRYPT_CHOSEN;
     }
 
     else
     {
         printf("Invalid choice!\n");
-        return -1;
+        return INVALID_INPUT;
     }
 }
