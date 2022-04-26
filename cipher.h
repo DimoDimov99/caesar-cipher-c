@@ -1,0 +1,7 @@
+#ifndef CAESAR_CIPHER_CIPHER_INCLUDE_GUARD
+#define CAESAR_CIPHER_CIPHER_INCLUDE_GUARD
+
+int encrypt_message();
+int decrypt_message();
+
+#endif // CAESAR_CIPHER_CIPHER_INCLUDE_GUARD

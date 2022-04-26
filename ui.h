@@ -1,0 +1,7 @@
+#ifndef CAESAR_CIPHER_UI_INCLUDE_GUARD
+#define CAESAR_CIPHER_UI_INCLUDE_GUARD
+
+int get_key();
+int user_choice();
+
+#endif // CAESAR_CIPHER_UI_INCLUDE_GUARD
