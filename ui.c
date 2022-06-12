@@ -46,20 +46,17 @@ int user_choice()
     fgets(choice, sizeof(choice), stdin);
 
     // convert for the choice to not be case sensitive
-    for (int i = 0; i < sizeof(choice); i++)
+    for (int i = 0; choice[i] != '\0'; i++)
     {
         choice[i] = tolower(choice[i]);
     }
 
-    int encrypt_choice = strcmp(choice, "encrypt\n");
-    int decrypt_choice = strcmp(choice, "decrypt\n");
-
-    if (encrypt_choice == 0)
+    if (strcmp(choice, "encrypt\n") == 0)
     {
         return ENCRYPT_CHOSEN;
     }
 
-    else if (decrypt_choice == 0)
+    else if (strcmp(choice, "decrypt\n") == 0)
     {
         return DECRYPT_CHOSEN;
     }

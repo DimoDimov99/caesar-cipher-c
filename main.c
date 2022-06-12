@@ -9,9 +9,9 @@
 int main()
 {
     char message[MESSAGE_SIZE];
-    int action = user_choice();
-    int key = get_key();
-    int message_result = get_message(message, MESSAGE_SIZE);
+    const int action = user_choice();
+    const int key = get_key();
+    const int message_result = get_message(message, MESSAGE_SIZE);
 
     if (action         == INVALID_INPUT ||
         key            == INVALID_INPUT ||
