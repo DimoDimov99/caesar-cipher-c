@@ -9,7 +9,7 @@
 int main()
 {
     char message[MESSAGE_SIZE];
-    const int action = user_choice();
+    const int action = get_action();
     const int key = get_key();
     const int message_result = get_message(message, MESSAGE_SIZE);
 

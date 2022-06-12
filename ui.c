@@ -12,10 +12,6 @@ int get_key()
     printf("Enter key: \n");
     if (scanf("%d", &number) == 1 && (number > 0 && number < 26))
     {
-        // while (getchar() != '\n')
-        // { }
-        // return number;
-
         if (getchar() == '\n')
         {
             return number;
@@ -38,29 +34,26 @@ int get_message(char message[], int size)
     return 0;
 }
 
-int user_choice()
+int get_action()
 {
-    char choice[9];
+    char action[9];
 
     printf("Type 'encrypt' to encrypt a message or type 'decrypt' to decrypt a message\n");
-    fgets(choice, sizeof(choice), stdin);
+    fgets(action, sizeof(action), stdin);
 
-    // convert for the choice to not be case sensitive
-    for (int i = 0; choice[i] != '\0'; i++)
+    for (int i = 0; action[i] != '\0'; i++)
     {
-        choice[i] = tolower(choice[i]);
+        action[i] = tolower(action[i]);
     }
 
-    if (strcmp(choice, "encrypt\n") == 0)
+    if (strcmp(action, "encrypt\n") == 0)
     {
         return ENCRYPT_CHOSEN;
     }
-
-    else if (strcmp(choice, "decrypt\n") == 0)
+    else if (strcmp(action, "decrypt\n") == 0)
     {
         return DECRYPT_CHOSEN;
     }
-
     else
     {
         printf("Invalid choice!\n");

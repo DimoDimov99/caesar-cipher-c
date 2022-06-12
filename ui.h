@@ -6,7 +6,7 @@
 #define DECRYPT_CHOSEN 2
 
 int get_key();
-int user_choice();
+int get_action();
 int get_message(char message[], int size);
 
 void display_result(char message[], int action);
