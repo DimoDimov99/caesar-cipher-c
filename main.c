@@ -29,5 +29,7 @@ int main()
         decrypt_message(message, key);
     }
 
+    display_result(message, action);
+
     return SUCCESS;
 }

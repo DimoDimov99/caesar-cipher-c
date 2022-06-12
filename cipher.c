@@ -1,5 +1,4 @@
 #include <ctype.h>
-#include <stdio.h>
 
 void encrypt_message(char message[], int key)
 {
@@ -20,9 +19,6 @@ void encrypt_message(char message[], int key)
 
         }
     }
-
-    // TODO: Move to UI and remove stdio include
-    printf("Encrypted message is: %s\n", message);
 }
 
 void decrypt_message(char message[], int key)
@@ -45,7 +41,4 @@ void decrypt_message(char message[], int key)
 
         }
     }
-
-    printf("Decrypted message is: %s\n", message);
 }
-

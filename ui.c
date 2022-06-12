@@ -67,3 +67,11 @@ int user_choice()
         return INVALID_INPUT;
     }
 }
+
+void display_result(char message[], int action)
+{
+    const char *actionTaken =
+        (action == ENCRYPT_CHOSEN) ? "Encrypted" : "Decrypted";
+
+    printf("%s message is: %s\n", actionTaken, message);
+}
