@@ -4,19 +4,12 @@ void encrypt_message(char message[], int key)
 {
     for (int i = 0; message[i] != '\n'; i++)
     {
-        if (isupper(message[i]))
-        {
-            message[i] = ((message[i] - 'A' + key ) % 26) + 'A';
-        }
-    
-        else if (islower(message[i]))
-        {
-            message[i] = ((message[i] - 'a' + key ) % 26) + 'a';
-        }
+        const char letterA = isupper(message[i]) ? 'A' :
+                             islower(message[i]) ? 'a' : 0;
 
-        else
+        if (letterA)
         {
-
+            message[i] = ((message[i] - letterA + key ) % 26) + letterA;
         }
     }
 }
@@ -25,20 +18,12 @@ void decrypt_message(char message[], int key)
 {
     for (int i = 0; message[i] != '\n'; i++)
     {
-        if (isupper(message[i]))
-        {
-            message[i] = (((message[i] - 'A' + (26 - key)) % 26) + 'A');
-        }
-    
-        else if (islower(message[i]))
-        {
-            message[i] = (((message[i] - 'a' + (26 - key)) % 26) + 'a');
+        const char letterA = isupper(message[i]) ? 'A' :
+                             islower(message[i]) ? 'a' : 0;
 
-        }
-
-        else
+        if (letterA)
         {
-
+            message[i] = (((message[i] - letterA + (26 - key)) % 26) + letterA);
         }
     }
 }
